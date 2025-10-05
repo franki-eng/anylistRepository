@@ -50,8 +50,9 @@ import { ListItemModule } from './list-item/list-item.module';
           introspection: true,
           autoSchemaFile: join( process.cwd(), 'src/schema.gql'),
           plugins: [
-            isDev? ApolloServerPluginLandingPageLocalDefault()
-            : ApolloServerPluginLandingPageProductionDefault(),
+            ApolloServerPluginLandingPageLocalDefault({
+              embed: true,
+            }),
           ],
           context({req}: { req: Request }) {
             // forma de seguridad de graphql
