@@ -47,7 +47,7 @@ import { ListItemModule } from './list-item/list-item.module';
         
         return {
           playground: false,
-          introspection: isDev,
+          introspection: true,
           autoSchemaFile: join( process.cwd(), 'src/schema.gql'),
           plugins: [
             isDev? ApolloServerPluginLandingPageLocalDefault()
